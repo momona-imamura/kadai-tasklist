@@ -4,4 +4,4 @@
             <li>{{ $error }}</li>
         @endforeach
     </ul>
-@endifs
+@endif
