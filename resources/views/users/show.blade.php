@@ -14,10 +14,14 @@
         </aside>
         <div class="col-xs-8">
             <ul class="nav nav-tabs nav-justified">
-                <li><a href="#">TimeLine</a></li>
                 <li><a href="#">Followings</a></li>
                 <li><a href="#">Followers</a></li>
             </ul>
+            @if (Auth::user()->id == $user->id)
+            @if (count($tasklists) > 0)
+                @include('tasks.index', ['tasks' => $tasklists])
+            @endif
+            @endif
         </div>
     </div>
 @endsection

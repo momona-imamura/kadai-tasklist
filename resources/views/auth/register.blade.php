@@ -4,7 +4,7 @@
     <div class="text-center">
         <h1>Sign up</h1>
     </div>
-
+    
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
 
