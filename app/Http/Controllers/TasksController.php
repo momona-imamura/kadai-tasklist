@@ -86,11 +86,7 @@ class TasksController extends Controller
                 return redirect('/');                
             }
 
-            $data = [
-                'user' => $user,
-                'tasks' => $tasklists,
-            ];
-            $data += $this->counts($user);
+            
        $task = Task::find($id);
 
         return view('tasks.show', [
