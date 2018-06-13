@@ -104,12 +104,24 @@ class TasksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        $task = Task::find($id);
+     {
+    if (\Auth::check()) {
+            $user = \Auth::user();
+            $task = Task::find($id);
+            
+            if (empty($task)||$user->id != $task->user_id) {
+                return redirect('/');                
+            }
+
+            
+       $task = Task::find($id);
 
         return view('tasks.edit', [
             'task' => $task,
         ]);
+    }else {
+            return view('welcome');
+        }
     }
 
     /**
